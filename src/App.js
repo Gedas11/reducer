@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import {useGlobalContext} from './components/context/LikeContext'
 import './App.css';
 
+
 function App() {
+  const {likes, setLike, removeLike} =  useGlobalContext()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>reducer</h1>
+      <p>like: {likes}</p>
+      <button onClick={setLike}>like</button>
+      <button onClick={removeLike}>dislike</button>
     </div>
   );
 }
